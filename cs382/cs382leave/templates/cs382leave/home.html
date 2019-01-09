@@ -1,0 +1,27 @@
+{% extends 'cs382leave/base.html'%}
+{% block content %}
+
+<div class="jumbotron">
+  {% if user.is_authenticated %}
+  <div class="container">
+      <!-- <p>Name: {{user.first_name}} {{user.last_name}}</p>
+  <p>UserName: {{user.username}}</p>
+  <p>Email: {{user.email}}</p> -->
+<h1 class="disppay-4 text-center"> Hey {{user.first_name}} {{user.last_name}}</h1>
+<br>
+<h1 class="text-center"> Welcome Back!</h1>
+<br>
+<br>
+<h3 class="text-center"> Click Compose to create new Leave Application </h3>
+<br>
+<div class="col-md-6 offset-md-5">
+  <a class="btn btn-danger" href="{% url 'application_form'%}" role="button">Compose</a>
+</div>
+{% else %}
+    <h1 class="display-4">Welcome to the online leave application portal</h1>
+    <p class="lead">If it is your first time, Click <b>Register</b> on the top-right corner </p>
+
+  </div>
+</div>
+{% endif %}
+{% endblock %}
